@@ -27,7 +27,10 @@ export const useStyles = makeStyles((theme) => ({
   green: {
     backgroundColor: '#00b020',
   },
-  footer: {},
+  footer: {
+    height: '100px',
+    verticalAlign: 'center'
+  },
   // choose screen
   cards: {
     display: 'flex',

@@ -18,6 +18,7 @@ import AdminScreen from './screens/AdminScreen';
 import SelectPaymentScreen from './screens/SelectPaymentScreen';
 import CompleteOrderScreen from './screens/CompleteOrderScreen';
 import { Helmet } from 'react-helmet';
+import './App.css';
 
 const theme = createMuiTheme({
   typography: {
@@ -42,6 +43,7 @@ const theme = createMuiTheme({
 });
 function App() {
   const { state } = useContext(Store);
+  const widthScreen = true;
 
   return (
     <BrowserRouter>
@@ -51,7 +53,7 @@ function App() {
 
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Container maxWidth={state.widthScreen ? 'lg' : 'sm'}>
+        <Container maxWidth={widthScreen ? 'lg' : 'sm'}>
           <Paper>
             <Route path="/" component={HomeScreen} exact></Route>
             <Route path="/admin" component={AdminScreen} exact></Route>

@@ -24,19 +24,19 @@ export default function HomeScreen(props) {
     }
   };
   return (
-    <Box className={[styles.root, styles.navy]}>
+    <Box className={["select-payment-container", styles.root]}>
       <Box className={[styles.main, styles.center]}>
         <Logo large></Logo>
-        <Typography
+        {/* <Typography
           className={styles.center}
           gutterBottom
           variant="h3"
           component="h3"
         >
           Select payment type
-        </Typography>
+        </Typography> */}
         <Box className={styles.cards}>
-          <Card className={[styles.card, styles.space]}>
+          {/* <Card className={[styles.card, styles.space]}>
             <CardActionArea onClick={() => selectHandler('Pay here')}>
               <CardMedia
                 component="img"
@@ -55,7 +55,7 @@ export default function HomeScreen(props) {
                 </Typography>
               </CardContent>
             </CardActionArea>
-          </Card>
+          </Card> */}
           <Card className={[styles.card, styles.space]}>
             <CardActionArea onClick={() => selectHandler('At counter')}>
               <CardMedia
@@ -71,7 +71,7 @@ export default function HomeScreen(props) {
                   color="textPrimary"
                   component="p"
                 >
-                  AT COUNTER
+                  PAY NOW
                 </Typography>
               </CardContent>
             </CardActionArea>

@@ -54,7 +54,7 @@ export default function AdminScreen(props) {
               <TableHead>
                 <TableRow>
                   <TableCell>Order Number</TableCell>
-                  <TableCell align="right">Price&nbsp;($)</TableCell>
+                  <TableCell align="right">Price&nbsp;(€)</TableCell>
                   <TableCell align="right">Count</TableCell>
                   <TableCell align="right">Items</TableCell>
                   <TableCell align="right">Type</TableCell>

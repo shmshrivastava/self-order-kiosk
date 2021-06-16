@@ -1,8 +1,8 @@
 const data = {
   categories: [
+    { name: 'Crepes', image: '/images/breakfast.jpg' },
+    { name: 'Waffles', image: '/images/burgers.jpg' },
     { name: 'Beverages', image: '/images/beverages.jpg' },
-    { name: 'Breakfast', image: '/images/breakfast.jpg' },
-    { name: 'Burgers', image: '/images/burgers.jpg' },
   ],
   products: [
     {

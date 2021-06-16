@@ -22,7 +22,7 @@ export default function HomeScreen(props) {
   };
   return (
     <Fade in={true}>
-      <Box className={[styles.root, styles.navy]}>
+      <Box className={[styles.root, "choose-screen-container"]}>
         <Box className={[styles.main, styles.center]}>
           <Logo large></Logo>
           <Typography

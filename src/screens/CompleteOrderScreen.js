@@ -18,7 +18,7 @@ export default function CompleteOrderScreen(props) {
   }, [order]);
 
   return (
-    <Box className={[styles.root, styles.navy]}>
+    <Box className={["complete-order-container", styles.root]}>
       <Box className={[styles.main, styles.center]}>
         <Box>
           <Logo large></Logo>

@@ -9,21 +9,21 @@ export default function HomeScreen(props) {
     <Card>
       <CardActionArea onClick={() => props.history.push('/choose')}>
         <Box className={[styles.root, styles.red]}>
-          <Box className={[styles.main, styles.center]}>
-            <Typography variant="h6" component="h6">
+          <Box className={["home-section-1"]}>
+            {/* <Typography variant="h6" component="h6">
               Fast & Easy
-            </Typography>
-            <Typography variant="h1" component="h1" className={styles.bold}>
+            </Typography> */}
+            {/* <Typography variant="h1" component="h1" className={styles.bold}>
               Order <br />
               & pay
               <br />
               here
-            </Typography>
-            <TouchAppIcon fontSize="large"></TouchAppIcon>
+            </Typography> */}
+            <Logo large/>
           </Box>
-          <Box className={[styles.center, styles.green]}>
-            <Logo large />
-            <Typography variant="h5" component="h5" className={styles.footer}>
+          <Box className={["home-section-2", styles.center]}>
+            <TouchAppIcon fontSize="large"></TouchAppIcon>
+            <Typography variant="h4" component="h4" className={"footer-text"}>
               Touch to start
             </Typography>
           </Box>

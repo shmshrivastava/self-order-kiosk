@@ -37,7 +37,7 @@ app.get('/api/products', async (req, res) => {
 });
 
 app.get('/api/products/seed', async (req, res) => {
-  // await Product.remove({});
+  await Product.remove({});
   const products = await Product.insertMany(data.products);
   res.send({ products });
 });

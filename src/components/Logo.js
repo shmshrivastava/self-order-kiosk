@@ -2,12 +2,12 @@ import React from 'react';
 import { useStyles } from '../styles';
 
 export default function Logo(props) {
-  const styles = useStyles();
+  // const styles = useStyles();
   return (
     <img
-      src="/images/logo.png"
-      alt="Food Order"
-      className={props.large ? styles.largeLogo : styles.logo}
+      src="logo.png"
+      alt="Delice"
+      className={"logo "}
     ></img>
   );
 }

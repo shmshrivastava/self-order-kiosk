@@ -84,7 +84,7 @@ export default function OrderScreen(props) {
   };
 
   return (
-    <Box className={styles.root}>
+    <Box className={"order-screen-container " + styles.root}>
       <Box className={styles.main}>
         <Dialog
           onClose={closeHandler}
@@ -153,7 +153,7 @@ export default function OrderScreen(props) {
         </Dialog>
 
         <Grid container>
-          <Grid item md={2}>
+          <Grid item md={2} className="category-list">
             <List>
               {loading ? (
                 <CircularProgress />
@@ -177,17 +177,17 @@ export default function OrderScreen(props) {
               )}
             </List>
           </Grid>
-          <Grid item md={10}>
+          <Grid  className="product-grid-container" item md={10}>
             <Typography
               gutterBottom
-              className={styles.title}
+              className={styles.title + " products-category-menu-title"}
               variant="h2"
               component="h2"
             >
               {categoryName || 'Main Menu'}
             </Typography>
 
-            <Grid container spacing={1}>
+            <Grid container className="product-grid" spacing={1}>
               {loadingProducts ? (
                 <CircularProgress />
               ) : errorProducts ? (
@@ -195,7 +195,7 @@ export default function OrderScreen(props) {
               ) : (
                 products.map((product) => (
                   <Slide key={product.name} direction="up" in={true}>
-                    <Grid item md={6}>
+                    <div item md={6}>
                       <Card
                         className={styles.card}
                         onClick={() => productClickHandler(product)}
@@ -229,13 +229,13 @@ export default function OrderScreen(props) {
                                 color="textPrimary"
                                 component="p"
                               >
-                                ${product.price}
+                                €{product.price}
                               </Typography>
                             </Box>
                           </CardContent>
                         </CardActionArea>
                       </Card>
-                    </Grid>
+                    </div>
                   </Slide>
                 ))
               )}
@@ -246,7 +246,7 @@ export default function OrderScreen(props) {
       <Box>
         <Box>
           <Box className={[styles.bordered, styles.space]}>
-            My Order - {orderType} | Tax: ${taxPrice} | Total: ${totalPrice} |
+            My Order - {orderType} | Tax: €{taxPrice} | Total: €{totalPrice} |
             Items: {itemsCount}
           </Box>
           <Box className={[styles.row, styles.around]}>

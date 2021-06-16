@@ -52,8 +52,8 @@ export default function ReviewScreen(props) {
   useEffect(() => {}, []);
 
   return (
-    <Box className={[styles.root]}>
-      <Box className={[styles.main, styles.navy, styles.center]}>
+    <Box className={[styles.root, "review-screen-container"]}>
+      <Box className={[styles.main, styles.center]}>
         <Dialog
           onClose={closeHandler}
           aria-labelledby="max-width-dialog-title"
@@ -125,7 +125,7 @@ export default function ReviewScreen(props) {
           </Typography>
         </Box>
 
-        <Grid container>
+        <Grid className="order-list" container>
           {orderItems.map((orderItem) => (
             <Grid item md={12} key={orderItem.name}>
               <Card
@@ -159,7 +159,7 @@ export default function ReviewScreen(props) {
                         color="textPrimary"
                         component="p"
                       >
-                        {orderItem.quantity} x ${orderItem.price}
+                        {orderItem.quantity} x €{orderItem.price}
                       </Typography>
                     </Box>
                   </CardContent>
@@ -171,9 +171,9 @@ export default function ReviewScreen(props) {
       </Box>
       <Box>
         <Box>
-          <Box className={[styles.bordered, styles.space]}>
-            My Order - {orderType === 'takeout' ? 'Take out' : 'Eat in'} | Tax:
-            ${taxPrice} | Total: ${totalPrice} | Items: {itemsCount}
+          <Box className={[styles.bordered, styles.space, "summary-footer"]}>
+            <span className="summary-footer-item summary-items">Items: {itemsCount}</span>
+            <span className="summary-footer-item summary-total">Total: €{totalPrice} </span>
           </Box>
           <Box className={[styles.row, styles.around]}>
             <Button

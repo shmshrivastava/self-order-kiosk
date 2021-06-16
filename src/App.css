@@ -1,0 +1,92 @@
+.home-section-1 {
+  background-color: #f6e8c4;
+  text-align: center;
+  height: 85vh;
+  padding: 4% 0;
+}
+
+.logo {
+  height: 100px;
+}
+
+.home-section-1 .logo {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.home-section-2 {
+  background-color: #31272d;
+  height: 15vh;
+}
+
+.choose-screen-container {
+  background-color: #31272d;
+}
+
+.choose-screen-container .MuiCard-root {
+  background-color: #f6e8c4;
+}
+
+.order-screen-container {
+  background-color: #fff;
+}
+
+.order-screen-container .MuiAvatar-root {
+  width: 70%;
+  height: auto;
+  margin: auto;
+}
+
+.order-screen-container .logo {
+  margin: auto;
+}
+
+.order-screen-container .MuiAvatar-root img {
+  width: 100%;
+  height: auto;
+}
+
+.order-screen-container .category-list {
+  background-color: #f6e8c4;
+}
+
+.order-screen-container .product-grid-container {
+  padding-left: 20px;
+  background-color: #31272d;
+}
+
+.order-screen-container .products-category-menu-title {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.review-screen-container .order-list {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.review-screen-container {
+  background-color: #31272d;
+}
+
+.review-screen-container .summary-footer {
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-screen-container .summary-footer-item {
+  width: fit-content;
+}
+
+.select-payment-container {
+  background-color: #31272d;
+}
+
+.complete-order-container {
+  background-color: #31272d;
+}
