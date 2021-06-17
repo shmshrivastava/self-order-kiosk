@@ -1,10 +1,84 @@
 const data = {
   categories: [
-    { name: 'Crepes', image: '/images/breakfast.jpg' },
-    { name: 'Waffles', image: '/images/burgers.jpg' },
+    { name: 'Crepes', image: '/images/crepe-logo.jpg' },
+    { name: 'Waffles', image: '/images/waffle-logo.jpg' },
     { name: 'Beverages', image: '/images/beverages.jpg' },
   ],
   products: [
+
+    {
+      category: 'Crepes',
+      name: 'Crepe Nature',
+      price: 3,
+      calorie: 200,
+      image: '/images/crepe-nature.jpg',
+    },
+    {
+      category: 'Crepes',
+      name: 'Chocolate Crepe',
+      price: 3.5,
+      calorie: 410,
+      image: '/images/chocolate-crepe.jpg',
+    },
+    {
+      category: 'Crepes',
+      name: 'Honey Crepe',
+      price: 3.5,
+      calorie: 320,
+      image: '/images/honey-crepe.jpg',
+    },
+
+
+    {
+      category: 'Crepes',
+      name: 'Sugar-Lemon Crepe',
+      price: 3.5,
+      calorie: 320,
+      image: '/images/lemon-sugar-crepe.jpg',
+    },
+
+    {
+      category: 'Crepes',
+      name: 'Whipped cream Crepe',
+      price: 4,
+      calorie: 320,
+      image: '/images/whipped-cream-crepe.jpg',
+    },
+
+
+    {
+      category: 'Waffles',
+      name: 'Waffle nature',
+      price: 1.9,
+      calorie: 90,
+      image:
+        '/images/waffle-nature.jpg',
+    },
+    {
+      category: 'Waffles',
+      name: 'Sugar Waffle',
+      price: 1.5,
+      calorie: 120,
+      image: '/images/sugar-waffle.jpg',
+    },
+    {
+      category: 'Waffles',
+      name: 'Chocolate Waffle',
+      price: 3,
+      calorie: 430,
+      image: '/images/chocolate-waffle.jpg',
+    },
+
+    {
+      category: 'Waffles',
+      name: 'Whipped Cream Waffle',
+      price: 3,
+      calorie: 430,
+      image: '/images/cream-waffle.jpg',
+    },
+
+
+
     {
       category: 'Beverages',
       name: 'Coca-Cola',
@@ -26,49 +100,8 @@ const data = {
       calorie: 170,
       image: '/images/t-mcdonalds-McCafe-Hot-Chocolate-Medium.jpg',
     },
-    {
-      category: 'Breakfast',
-      name: 'Bacon & Biscuit',
-      price: 1.9,
-      calorie: 90,
-      image:
-        '/images/t-mcdonalds-Bacon-Egg-Cheese-Biscuit-Regular-Size-Biscuit.jpg',
-    },
-    {
-      category: 'Breakfast',
-      name: 'Blueberry Muffin',
-      price: 1.5,
-      calorie: 120,
-      image: '/images/t-blueberry-muffin.jpg',
-    },
-    {
-      category: 'Breakfast',
-      name: 'Big Breakfast',
-      price: 3,
-      calorie: 430,
-      image: '/images/s-mcdonalds-Big-Breakfast-Regular-Size-Biscuit.jpg',
-    },
-    {
-      category: 'Burgers',
-      name: 'Big Mac',
-      price: 1.9,
-      calorie: 200,
-      image: '/images/t-mcdonalds-Big-Mac.jpg',
-    },
-    {
-      category: 'Burgers',
-      name: 'Hamburger',
-      price: 1.5,
-      calorie: 410,
-      image: '/images/t-mcdonalds-Hamburger.jpg',
-    },
-    {
-      category: 'Burgers',
-      name: 'McDouble',
-      price: 3,
-      calorie: 320,
-      image: '/images/t-mcdonalds-McDouble.jpg',
-    },
+
+
   ],
 };
 module.exports = data;
