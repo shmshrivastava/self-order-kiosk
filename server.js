@@ -95,10 +95,12 @@ app.post('/api/orders', async (req, res) => {
   const order = await Order({ ...req.body, number: lastNumber + 1 }).save();
   res.send(order);
 });
+
 app.get('/api/orders', async (req, res) => {
   const orders = await Order.find({ isDelivered: false, isCanceled: false });
   res.send(orders);
 });
+
 app.put('/api/orders/:id', async (req, res) => {
   const order = await Order.findById(req.params.id);
   if (order) {

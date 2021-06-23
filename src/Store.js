@@ -158,7 +158,7 @@ function reducer(state, action) {
         (a, c) => a + c.quantity * c.price,
         0
       );
-      const taxPrice = Math.round(0.15 * itemsPrice * 100) / 100;
+      const taxPrice = 0;// Math.round(0.15 * itemsPrice * 100) / 100;
       const totalPrice = Math.round((itemsPrice + taxPrice) * 100) / 100;
       return {
         ...state,
