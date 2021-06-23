@@ -30,6 +30,8 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import { Alert } from '@material-ui/lab';
 import { useStyles } from '../styles';
 import Logo from '../components/Logo';
+import SummaryFooter from '../components/SummaryFooter';
+
 export default function OrderScreen(props) {
   const styles = useStyles();
   const { state, dispatch } = useContext(Store);
@@ -84,7 +86,7 @@ export default function OrderScreen(props) {
   };
 
   return (
-    <Box className={"order-screen-container " + styles.root}>
+    <Box className={"order-screen-container screen-container " + styles.root}>
       <Box className={styles.main}>
         <Dialog
           onClose={closeHandler}
@@ -96,7 +98,7 @@ export default function OrderScreen(props) {
           <DialogTitle className={styles.center}>
             Add {product.name}
           </DialogTitle>
-          <Box className={[styles.row, styles.center]}>
+          <Box className={[styles.row, styles.center, "counter-row"]}>
             <Button
               variant="contained"
               color="primary"
@@ -143,7 +145,7 @@ export default function OrderScreen(props) {
             <Button
               onClick={addToOrderHandler}
               variant="contained"
-              color="primary"
+              color="secondary"
               size="large"
               className={styles.largeButton}
             >
@@ -207,25 +209,25 @@ export default function OrderScreen(props) {
                             image={product.image}
                             className={styles.media}
                           />
-                          <CardContent>
+                          <CardContent className="card-content">
                             <Typography
                               gutterBottom
-                              variant="body2"
+                              variant="body1"
                               color="textPrimary"
                               component="p"
                             >
                               {product.name}
                             </Typography>
                             <Box className={styles.cardFooter}>
-                              <Typography
+                              {/* <Typography
                                 variant="body2"
                                 color="textSecondary"
                                 component="p"
                               >
                                 {product.calorie} Cal
-                              </Typography>
+                              </Typography> */}
                               <Typography
-                                variant="body2"
+                                variant="body1"
                                 color="textPrimary"
                                 component="p"
                               >
@@ -245,11 +247,8 @@ export default function OrderScreen(props) {
       </Box>
       <Box>
         <Box>
-          <Box className={[styles.bordered, styles.space]}>
-            My Order - {orderType} | Tax: €{taxPrice} | Total: €{totalPrice} |
-            Items: {itemsCount}
-          </Box>
-          <Box className={[styles.row, styles.around]}>
+          <SummaryFooter itemsCount={itemsCount} totalPrice={totalPrice} />
+          <Box className={[styles.row, styles.around, "footer-buttons"]}>
             <Button
               onClick={() => {
                 clearOrder(dispatch);
@@ -265,7 +264,7 @@ export default function OrderScreen(props) {
             <Button
               onClick={previewOrderHandler}
               variant="contained"
-              color="primary"
+              color="secondary"
               disabled={orderItems.length === 0}
               className={styles.largeButton}
             >

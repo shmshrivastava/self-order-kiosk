@@ -17,6 +17,8 @@ import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import { useStyles } from '../styles';
 import Logo from '../components/Logo';
+import SummaryFooter from "../components/SummaryFooter"
+
 export default function ReviewScreen(props) {
   const styles = useStyles();
   const { state, dispatch } = useContext(Store);
@@ -52,7 +54,7 @@ export default function ReviewScreen(props) {
   useEffect(() => {}, []);
 
   return (
-    <Box className={[styles.root, "review-screen-container"]}>
+    <Box className={[styles.root, "screen-container review-screen-container"]}>
       <Box className={[styles.main, styles.center]}>
         <Dialog
           onClose={closeHandler}
@@ -64,7 +66,7 @@ export default function ReviewScreen(props) {
           <DialogTitle className={styles.center}>
             Add {product.name}
           </DialogTitle>
-          <Box className={[styles.row, styles.center]}>
+          <Box className={[styles.row, styles.center, "counter-row"]}>
             <Button
               variant="contained"
               color="primary"
@@ -105,7 +107,7 @@ export default function ReviewScreen(props) {
             <Button
               onClick={addToOrderHandler}
               variant="contained"
-              color="primary"
+              color="secondary"
               size="large"
               className={styles.largeButton}
             >
@@ -133,7 +135,7 @@ export default function ReviewScreen(props) {
                 onClick={() => productClickHandler(orderItem)}
               >
                 <CardActionArea>
-                  <CardContent>
+                  <CardContent className="order-content">
                     <Box className={[styles.row, styles.between]}>
                       <Typography
                         gutterBottom
@@ -147,13 +149,13 @@ export default function ReviewScreen(props) {
                     </Box>
 
                     <Box className={[styles.row, styles.between]}>
-                      <Typography
+                      {/* <Typography
                         variant="body2"
                         color="textSecondary"
                         component="p"
                       >
                         {orderItem.calorie} Cal
-                      </Typography>
+                      </Typography> */}
                       <Typography
                         variant="body2"
                         color="textPrimary"
@@ -171,11 +173,8 @@ export default function ReviewScreen(props) {
       </Box>
       <Box>
         <Box>
-          <Box className={[styles.bordered, styles.space, "summary-footer"]}>
-            <span className="summary-footer-item summary-items">Items: {itemsCount}</span>
-            <span className="summary-footer-item summary-total">Total: €{totalPrice} </span>
-          </Box>
-          <Box className={[styles.row, styles.around]}>
+          <SummaryFooter itemsCount={itemsCount} totalPrice={totalPrice} />
+          <Box className={[styles.row, styles.around, "footer-buttons"]}>
             <Button
               onClick={() => {
                 props.history.push(`/order`);

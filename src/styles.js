@@ -63,6 +63,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   largeButton: {
     width: 250,
+    height: 72
   },
   largeInput: {
     width: '60px!important',
