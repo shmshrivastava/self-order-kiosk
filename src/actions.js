@@ -7,6 +7,7 @@ import {
   PRODUCT_LIST_SUCCESS,
   PRODUCT_LIST_FAIL,
   ORDER_ADD_ITEM,
+  ORDER_ADD_CODE,
   ORDER_REMOVE_ITEM,
   ORDER_CLEAR,
   ORDER_SET_TYPE,
@@ -101,6 +102,13 @@ export const addToOrder = async (dispatch, item) => {
 export const removeFromOrder = async (dispatch, item) => {
   return dispatch({
     type: ORDER_REMOVE_ITEM,
+    payload: item,
+  });
+};
+
+export const addCheatCodeToOrder = async (dispatch, item) => {
+  return dispatch({
+    type: ORDER_ADD_CODE,
     payload: item,
   });
 };

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import {
   Box,
@@ -7,16 +7,23 @@ import {
   CardContent,
   CardMedia,
   Typography,
+  TextField
 } from '@material-ui/core';
 import { useStyles } from '../styles';
 import Logo from '../components/Logo';
-import { setPaymentType } from '../actions';
+import { setPaymentType, addCheatCodeToOrder } from '../actions';
 import { Store } from '../Store';
 export default function HomeScreen(props) {
+
   const { dispatch } = useContext(Store);
   const styles = useStyles();
+
+  const [code, setCode] = useState("");
+
   const selectHandler = (paymentType) => {
     setPaymentType(dispatch, paymentType);
+    addCheatCodeToOrder(dispatch, code);
+
     if (paymentType === 'Pay here') {
       props.history.push('/payment');
     } else {
@@ -56,26 +63,40 @@ export default function HomeScreen(props) {
               </CardContent>
             </CardActionArea>
           </Card> */}
-          <Card className={[styles.card, styles.space]}>
-            <CardActionArea onClick={() => selectHandler('At counter')}>
-              <CardMedia
-                component="img"
-                alt="At counter"
-                image="/images/atcounter.png"
-                className={styles.media}
+          <div>
+            <Card className={[styles.card, styles.space, "pay-now-card"]}>
+              <CardActionArea onClick={() => selectHandler('At counter')}>
+                <CardMedia
+                  component="img"
+                  alt="At counter"
+                  image="/images/atcounter.png"
+                  className={styles.media}
+                />
+                <CardContent>
+                  <Typography
+                    gutterBottom
+                    variant="h6"
+                    color="textPrimary"
+                    component="p"
+                  >
+                    PAY NOW
+                  </Typography>
+                </CardContent>
+
+              </CardActionArea>
+
+            </Card>
+
+            <TextField
+              className={"code-box"}
+              type="text"
+              variant="filled"
+              placeholder={"Use cheat code"}
+              value={code}
+              onChange={e => setCode(e.target.value)}
               />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h6"
-                  color="textPrimary"
-                  component="p"
-                >
-                  PAY NOW
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
+          </div>
+          
         </Box>
       </Box>
     </Box>

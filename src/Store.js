@@ -2,6 +2,7 @@ import React, { createContext, useReducer } from 'react';
 import useReducerWithThunk from 'use-reducer-thunk';
 import {
   ORDER_ADD_ITEM,
+  ORDER_ADD_CODE,
   ORDER_REMOVE_ITEM,
   ORDER_CLEAR,
   CATEGORY_LIST_FAIL,
@@ -120,6 +121,15 @@ function reducer(state, action) {
         ...state,
         orderCreate: { loading: false, error: action.payload },
       };
+    case ORDER_ADD_CODE:
+      return {
+        ...state,
+        order: {
+          ...state.order,
+          code: action.payload
+        },
+      }
+      ;
     case ORDER_ADD_ITEM: {
       const item = action.payload;
       const existItem = state.order.orderItems.find(

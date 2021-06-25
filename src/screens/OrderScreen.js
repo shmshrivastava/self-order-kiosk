@@ -154,7 +154,7 @@ export default function OrderScreen(props) {
           </Box>
         </Dialog>
 
-        <Grid container>
+        <Grid className="section-1-container" container>
           <Grid item md={2} className="category-list">
             <List>
               {loading ? (

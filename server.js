@@ -60,6 +60,7 @@ const Order = mongoose.model(
       number: { type: Number, default: 0 },
       orderType: String,
       paymentType: String,
+      code: String,
       isPaid: { type: Boolean, default: false },
       isReady: { type: Boolean, default: false },
       inProgress: { type: Boolean, default: true },
