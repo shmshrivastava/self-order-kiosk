@@ -48,8 +48,8 @@ const data = {
 
     {
       category: 'Waffles',
-      name: 'Waffle nature',
-      price: 1.9,
+      name: 'Waffle Nature',
+      price: 3.5,
       calorie: 90,
       image:
         '/images/waffle-nature.jpg',
@@ -57,14 +57,14 @@ const data = {
     {
       category: 'Waffles',
       name: 'Sugar Waffle',
-      price: 1.5,
+      price: 4,
       calorie: 120,
       image: '/images/sugar-waffle.jpg',
     },
     {
       category: 'Waffles',
       name: 'Chocolate Waffle',
-      price: 3,
+      price: 4,
       calorie: 430,
       image: '/images/chocolate-waffle.jpg',
     },
@@ -72,7 +72,7 @@ const data = {
     {
       category: 'Waffles',
       name: 'Whipped Cream Waffle',
-      price: 3,
+      price: 4.5,
       calorie: 430,
       image: '/images/cream-waffle.jpg',
     },
