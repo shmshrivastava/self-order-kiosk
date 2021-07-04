@@ -134,6 +134,13 @@ app.delete('/api/orders/:id', async (req, res) => {
   const order = await Order.findByIdAndDelete(req.params.id);
   res.send(order);
 });
+
+app.delete('/api/orders/delice/all', async (req, res) => {
+  console.log("I am here already");
+  const order = await Order.deleteMany({});
+  res.send(order);
+});
+
 app.use(express.static(path.join(__dirname, '/build')));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/build/index.html'));
